@@ -7,16 +7,58 @@
   box-sizing: border-box; }
 
 body {
-  min-height: 100vh; }
+  min-height: 100vh;
+  position: relative; }
 
 a {
   display: inline-block;
   text-decoration: none; }
 
 /*PARTIALS*/
-.logo {
-  width: 40%; }
+.pieDePagina {
+  font-size: 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center; }
+
+header {
+  min-height: 15vh; }
+  header .logo {
+    width: 40%; }
 
 /*views*/
-main section div img.image {
-  width: 100%; }
+div .image {
+  width: 100%;
+  filter: contrast(80%);
+  opacity: 0.9;
+  padding: 4rem; }
+
+div #listaDeProductos {
+  color: black; }
+
+div .center {
+  text-align: center; }
+
+div ul {
+  list-style-type: none; }
+
+/*             background-image: url(../../public/img/living.jpg);
+            background-size:cover;
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "texto1 form-g"
+            "texto2 form-g";
+        }
+        .form-g{
+            grid-area: form-g;
+        }
+        .texto1{
+            grid-area: texto1;
+        }
+        .texto2{
+            grid-area: texto2;
+        }
+    }
+
+ */

@@ -1,10 +1,42 @@
-main{
-    section{
-        div{
+ div {
+    
 
-            img.image{
-                width: 100%;
-            }
+    .image{
+        width: 100%;
+        filter: contrast(80%);
+        opacity: 0.9;
+        padding: 4rem;
+    }
+    
+    #listaDeProductos{
+        color:black;
+}
+    .center{
+        text-align: center;
+    }
+    ul {
+        list-style-type: none;
+    }
+    
+}
+        
+/*             background-image: url(../../public/img/living.jpg);
+            background-size:cover;
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "texto1 form-g"
+            "texto2 form-g";
+        }
+        .form-g{
+            grid-area: form-g;
+        }
+        .texto1{
+            grid-area: texto1;
+        }
+        .texto2{
+            grid-area: texto2;
         }
     }
-}
+
+ */
