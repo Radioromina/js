@@ -9,11 +9,16 @@ const cargarProductos = (elemento)=> {
     listaDeProductos.innerHTML = ""
     for (elemento of productos) {
         const liProductos = document.createElement("li")
-        liProductos.innerHTML = `
-        <img src="${elemento.img}" width="20%"></img>
-        <h3> ${elemento.marca}, ${elemento.pulgadas}</h3>
-        <p>Precio Final: $${elemento.importeFinal}</p>
-        <button type="button" class="btn btn-warning">Agregar al Carrito</button>`
+        liProductos.innerHTML =
+        `<div class="flex-row justify-content-center">
+        <div class="card w-50" >
+          <img src="${elemento.img}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5> ${elemento.marca}, ${elemento.pulgadas}</h5>
+            <p>Precio Final:$${elemento.importeFinal}</p>
+            <button type="button" class=" btn btn-warning">Agregar al Carrito</button>
+          </div>
+        </div>`
         liProductos.addEventListener("click", ()=> {
             agregarAlCarrito(`${liProductos.innerText}`)
         })
@@ -31,7 +36,7 @@ cargarProductos()
 
 const agregarAlCarrito = (productos)=> { 
     if (productos > "") {
-        debugger
+      
         const id = productos + "enCarrito" 
         const liCarrito = document.createElement("li")
         liCarrito.innerText = productos
