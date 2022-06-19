@@ -43,12 +43,27 @@
         <ul id="listaDeProductos" class="justify-content-center">
         </ul>
       </div>
-      <div>
-        <h2>Carrito</h2>
-        <ul id="listCarrito"></ul>
-      </div>
+      
+<!--Off Canvas Carrito-->
+<section class="fixed-bottom mb-5">
+  <div class="d-flex ms-5 justify-content-start">
+    <img src="./public/img/cart4 (1).svg" alt="" class="btn btn-warning fixed " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+  </div>
+  
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">CARRITO DE COMPRAS</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul id="listCarrito">
+      </ul>
+      <p class="precioProducto">Precio Total: $<span id="precioTotal">0</span></p>
+    </div>
+  </div>
+</section>
     </main>
-    <button id="btnPrincipal"></button>
+
     <!--Final de Main-->
     <!--inicio de Footer-->
     <footer class="pieDePagina">

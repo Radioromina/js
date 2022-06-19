@@ -40,3 +40,6 @@ div {
     color: black; }
   div ul {
     list-style-type: none; }
+
+main section div img {
+  width: 5%; }
