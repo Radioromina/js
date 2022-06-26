@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnovo</title>
     <script defer src="./js/arrayproductos.js"> </script>
-    <script defer src="./js/variables.js"></script>
-    <script defer src="./js/main.js"></script>
+    <script defer src="./js/productos.js"></script>
+    <script defer src="./js/usuarios.js"></script>
+
   
 </head>
 <body>
@@ -33,36 +34,78 @@
           </nav>
     </header>
     <!--Inicio de Main-->
-    <main>
+<main class="container ">
       <div>
         <img class="image" src="./public/img/living.jpg" alt="Imagen Principal">
       </div>
-
-      
-      <div class="container">
-        <ul id="listaDeProductos" class="justify-content-center">
-        </ul>
+      <div>
+        <h3 class="linea">SMARTS-NOTEBOOKS-CELULARES</h3>
+        <div id="listaDeProductos" class="d-flex justify-content-around  flex-wrap col-sm-12">
+        </div>
       </div>
       
-<!--Off Canvas Carrito-->
-<section class="fixed-bottom mb-5">
-  <div class="d-flex ms-5 justify-content-start">
-    <img src="./public/img/cart4 (1).svg" alt="" class="btn btn-warning fixed " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-  </div>
-  
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasRightLabel">CARRITO DE COMPRAS</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <!--Off Canvas Carrito-->
+  <section class="fixed-bottom mb-5">
+    <div class="d-flex ms-5 justify-content-start">
+      <img src="./public/img/cart4 (1).svg" alt="" class="btn btn-warning fixed " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
     </div>
-    <div class="offcanvas-body">
-      <ul id="listCarrito">
-      </ul>
-      <p class="precioProducto">Precio Total: $<span id="precioTotal">0</span></p>
+    
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">CARRITO DE COMPRAS</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul id="listCarrito">
+        </ul>
+        <p class="precioProducto">Precio Total: $<span id="precioTotal">0</span></p>
+      </div>
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Pagar Carrito
+</button>
+    </div>
+  </section>
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Datos de Contacto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="inputNombre" placeholder="Tu nombre">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="inputApellido" placeholder="Tu apellido">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Telefono</label>
+            <input type="number" class="form-control" id="inputTele" placeholder="Tu telefono">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
+        <button id="cargarForm" type="button" class="btn btn-warning">Cargar Datos</button>
+        <button id="mostrarCompra" type="button" class="btn btn-warning">Mostrar Carrito</button>
+        <div id="miCarrito">
+
+        </div>
+      </div>
     </div>
   </div>
-</section>
-    </main>
+</div>
+</main>
 
     <!--Final de Main-->
     <!--inicio de Footer-->
@@ -83,3 +126,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
+
