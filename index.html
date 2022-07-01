@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnovo</title>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="./js/arrayproductos.js"> </script>
     <script defer src="./js/productos.js"></script>
     <script defer src="./js/usuarios.js"></script>
@@ -59,11 +60,12 @@
         <ul id="listCarrito">
         </ul>
         <p class="precioProducto">Precio Total: $<span id="precioTotal">0</span></p>
+        <button id="vaciar-carrito" type="button" class="btn btn-warning mb-5"> Vaciar Carrito</button>
       </div>
       <!-- Button trigger modal -->
-<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Pagar Carrito
-</button>
+  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Pagar Carrito
+  </button>
     </div>
   </section>
   <!-- Modal -->

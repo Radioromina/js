@@ -21,20 +21,33 @@ function guardarCompra() {
 }
 cargarForm.addEventListener("click", (e)=>{
     e.preventDefault()
-    guardarDatosUser()
-    guardarCompra()
-    alert("DatosEnviados")
+    inputNombre.value, inputApellido.value, inputEmail.value, inputTele.value === "" ? swal.fire({
+        icon: 'error',
+        title: '¡Completa tus datos!',
+        confirmButtonText: 'Aceptar'
+    }) : (guardarDatosUser(), guardarCompra(), swal.fire({
+        icon: 'success',
+        title: '¡Completa tus datos!',
+        confirmButtonText: 'Aceptar'
+      })) 
+    
+    
 })
 
 
 mostrarCompra.addEventListener("click", (e)=>{
     e.preventDefault()
-    recuperarCompra()
+    carrito.length === 0 ? 
+    swal.fire({
+        title: '¡Tu carrito se encuentra vacío!',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+}):recuperarCompra()
 })
 
 function recuperarCompra(){
-
-    let carrito = JSON.parse(localStorage.getItem("carrito"))
+    
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || []
     let item =""
 
     for (el of carrito){
