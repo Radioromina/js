@@ -18,7 +18,7 @@ function mostrarProductos(array){
         let div = document.createElement("div")
         div.innerHTML = `
         <div class="card border-0 text-center" class="col-sm-12" >
-        <img src="${img}" class="card-img-top">
+        <img src="${img}" class="card-img-top"></img>
         <div class="card-body">
         <h5> ${marca}, ${pulgadas}</h5>
         <p>Precio Final:$${importeFinal}</p>
