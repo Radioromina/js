@@ -56,6 +56,7 @@ const actualizarCarrito =() =>{
     carrito.forEach((prod)=>{
         const div = document.createElement("div")
         div.innerHTML=`
+        <img>${prod.img}</img>
         <p>${prod.marca}</p>
         <p>${prod.modelo}</p>
         <p>Importe Final: $${prod.importeFinal}</p>
