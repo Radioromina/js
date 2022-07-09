@@ -22,7 +22,7 @@ main  {
     }
 
     .linea{
-        border-bottom: 6px solid #e27e0c;
+        border-bottom: 4px solid #e27e0c;
         height: 2px;
         max-width: 1800px;
         padding: 3rem;
@@ -45,4 +45,19 @@ main  {
 .swal2-styled.swal2-confirm{
     background-color: #e27e0c;
     color:black;
+}
+h1{
+    color:black;
+    text-align: center;
+    margin-top: 4rem;
+    font-family: $font-primary;
+}
+.nav-link{
+    font-family: $font-primary;
+    border: 2rem;
+
+}
+.navbar-nav{
+    border: 2rem;
+    border-color: #e27e0c;
 }

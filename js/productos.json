@@ -1,0 +1,222 @@
+[
+    {
+        "cantidad":1,
+        "img":"public/img/samsung50.jpg",
+        "marca":"Smart tv Samsung",
+        "stock": 15,
+        "precio":89000,
+        "modelo": "UN50",
+        "pulgadas": 50
+        
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/samsung43.jpg",
+        "marca":"Smart tv Samsung",
+        "stock": 12,
+        "precio":45000,
+        "modelo": "UN32",
+        "pulgadas": 32
+        
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/philips50.jpg",
+        "marca":"Smart tv Philips",
+        "stock": 8,
+        "precio":75000,
+        "modelo": "50PU",
+        "pulgadas": 50
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/philips43.jpg",
+        "marca":"Smart tv Philips",
+        "stock": 13,
+        "precio":55000,
+        "modelo": "43PF",
+        "pulgadas": 43
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/LG50.jpg",
+        "marca":"Smart tv LG",
+        "stock": 10,
+        "precio":60000,
+        "modelo": "43LM",
+        "pulgadas": 50
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/LG43.jpg",
+        "marca":"Smart tv LG",
+        "stock": 15,
+        "precio":120000,
+        "modelo": "50UN",
+        "pulgadas": 43
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/noblex50.jpg",
+        "marca":"TV Noblex",
+        "stock": 20,
+        "precio":719999,
+        "modelo": "DM50",
+        "pulgadas": 50
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/noblex43.jpg",
+        "marca":"TV Noblex",
+        "stock": 17,
+        "precio":44999,
+        "modelo": "DK43",
+        "pulgadas": 43
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/notebook-noblex.webp",
+        "marca":"Noblex",
+        "stock": 5,
+        "precio":56999,
+        "modelo": "intel Celeron",
+        "pulgadas": "14.1"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/notebook-exo.jpg",
+        "marca":"Exo",
+        "stock": 3,
+        "precio":"75999",
+        "modelo": "SMART P37",
+        "pulgadas": "14.1"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/NOTEBOOK-LENOVO.webp",
+        "marca":"Lenovo",
+        "stock": 4,
+        "precio":"61999",
+        "modelo": "ideapad",
+        "pulgadas": "14.1"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/NOTEBOOK-LENOVO.webp",
+        "marca":"Lenovo",
+        "stock": 2,
+        "precio":"83999",
+        "modelo": "ideapad",
+        "pulgadas": "15.6"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/notebook-acer.webp",
+        "marca":"acer",
+        "stock": 2,
+        "precio":"94999",
+        "modelo": "Aspire",
+        "pulgadas": "15.6"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/notebook-lenovo-think.webp",
+        "marca":"Lenovo",
+        "stock": 2,
+        "precio":"167325",
+        "modelo":"ThinkPad",
+        "pulgadas": "15.6"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/notebook-acer.webp",
+        "marca":"acer",
+        "stock": 2,
+        "precio":"94999",
+        "modelo": "Aspire",
+        "pulgadas": "15.6"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/notebook-lenovo-think.webp",
+        "marca":"Lenovo",
+        "stock": 2,
+        "precio":"167325",
+        "modelo":"ThinkPad",
+        "pulgadas": "15.6"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/xiaomi--pocophone-pro.jpg",
+        "marca":"Xiaomi",
+        "stock": 5,
+        "precio":"100970",
+        "modelo":"POCOPHONE PRO",
+        "pulgadas": "6.53"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/samsung-galaxys21.jpg",
+        "marca":"Samsung Galaxy",
+        "stock": 12,
+        "precio":"104999",
+        "modelo":"S21",
+        "pulgadas": "6.4"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/samsung-galaxyA23.jpg",
+        "marca":"Samsung Galaxy",
+        "stock": 9,
+        "precio":"48999",
+        "modelo":"A23",
+        "pulgadas": "6.6"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/motorola-EDGE20LITE.jpg",
+        "marca":"Motorola",
+        "stock":13,
+        "precio":"54999",
+        "modelo":"G60S",
+        "pulgadas": "6.8"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/xiaomi-redmi-note10.jpg",
+        "marca":"xiaomi",
+        "stock":3,
+        "precio":"108159",
+        "modelo":"MI11",
+        "pulgadas": "6.67"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/LG-K50.jpg",
+        "marca":"LG",
+        "stock":7,
+        "precio":"48999",
+        "modelo":"K50",
+        "pulgadas": "6.26"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/LG-VELVET.jpg",
+        "marca":"LG",
+        "stock":8,
+        "precio":"199899",
+        "modelo":"VELVET",
+        "pulgadas": "6.8"
+    },
+    {
+        "cantidad":1,
+        "img":"public/img/LGK51S.jpg",
+        "marca":"LG",
+        "stock":4,
+        "precio":"48351",
+        "modelo":"K1S",
+        "pulgadas": "6.55"
+    }
+
+
+]

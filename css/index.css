@@ -1,10 +1,15 @@
 /*MISCELANEOUS*/
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Open+Sans:ital,wght@0,300;1,300&display=swap");
 *,
 * ::before,
 * ::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
+
+.contenedor {
+  max-width: 1080px;
+  margin: 0 auto; }
 
 body {
   min-height: 100vh;
@@ -22,7 +27,8 @@ button {
   font-size: 10px;
   padding-top: 25px;
   padding-bottom: 25px;
-  text-align: center; }
+  text-align: center;
+  background-color: #a9a9a99c; }
 
 header {
   min-height: 15vh; }
@@ -40,7 +46,7 @@ div {
     filter: contrast(80%);
     opacity: 0.9; }
   div .linea {
-    border-bottom: 6px solid #e27e0c;
+    border-bottom: 4px solid #e27e0c;
     height: 2px;
     max-width: 1800px;
     padding: 3rem;
@@ -55,3 +61,17 @@ div {
 .swal2-styled.swal2-confirm {
   background-color: #e27e0c;
   color: black; }
+
+h1 {
+  color: black;
+  text-align: center;
+  margin-top: 4rem;
+  font-family: "Chakra Petch", sans-serif; }
+
+.nav-link {
+  font-family: "Chakra Petch", sans-serif;
+  border: 2rem; }
+
+.navbar-nav {
+  border: 2rem;
+  border-color: #e27e0c; }

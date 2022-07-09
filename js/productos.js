@@ -5,23 +5,24 @@ const listCarrito = document.getElementById("listCarrito")
 const listaDeProductos = document.getElementById("listaDeProductos")
 const vaciarCarrito = document.getElementById("vaciar-carrito")
 const precioTotal = document.getElementById("precioTotal")
+const guardarProductos = document.getElementById("guardarProductos")
+const productos = []
 
 
 
-
-mostrarProductos(productos)
 
 function mostrarProductos(array){
     
     array.forEach(el=>{
         const {img, marca, pulgadas, importeFinal, id} = el
         let div = document.createElement("div")
+        div.className = "w-25 d-flex flex-wrap"
         div.innerHTML = `
-        <div class="card border-0 text-center" class="col-sm-12" >
+        <div class="card border-1 border-warning text-center">
         <img src="${img}" class="card-img-top"></img>
         <div class="card-body">
         <h5> ${marca}, ${pulgadas}</h5>
-        <p>Precio Final:$${importeFinal}</p>
+        <p class="h6">Precio:$${importeFinal}</p>
         <button type="button" id="boton${id}" class=" btn btn-warning">Agregar al Carrito</button>
         </div>
         </div>
@@ -54,14 +55,15 @@ const agregarAlCarrito = (elId) => {
 const actualizarCarrito =() =>{
     listCarrito.innerHTML=""
     carrito.forEach((prod)=>{
+        const {img} = prod
         const div = document.createElement("div")
         div.innerHTML=`
-        <img>${prod.img}</img>
+        <img src="${img}" class="card-img-top w-25"></img>
         <p>${prod.marca}</p>
         <p>${prod.modelo}</p>
         <p>Importe Final: $${prod.importeFinal}</p>
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</p>
-        <button onclick = "eliminarDelCarrito(${prod.id})" class="btn-primary">borrar </button>
+        <button onclick = "eliminarDelCarrito(${prod.id})" class=" btn btn-warning">Borrar </button>
         `
         listCarrito.appendChild(div)
         localStorage.setItem("carrito", JSON.stringify("carrito"))
@@ -77,5 +79,10 @@ const eliminarDelCarrito = (elId) =>{
 }
 vaciarCarrito.addEventListener("click",()=>{
     carrito.length = 0
+    precioTotal.innerText= 0
     actualizarCarrito()
+})
+guardarProductos.addEventListener ("click",()=>{
+    carrito = JSON.stringify(carrito)
+    localStorage.setItem("carrito", carrito)
 })
