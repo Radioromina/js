@@ -19,7 +19,7 @@
 </head>
 <body>
     <header>
-      <nav class="navbar navbar-expand-lg position-fixed fixed-top bg-light  p-4 d-flex">
+      <nav class="navbar navbar-expand-lg position-fixed fixed-top bg-light  p-1 d-flex">
             <div class="container">
               <a class="logo" href="./index.html">
                 <img class="logo animate__animated  animate__fadeInDown 2s " src="./public/img/logo.svg" alt="logo de la empresa">
@@ -42,15 +42,15 @@
   <div>
     <h1 class="linea animate__animated  animate__fadeInUp 2s">Nuestros Productos</h1>
   </div>
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade d-flex flex-wrap" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="image" src="public/img/living.jpg" class="d-block W-100" alt="smart">
+      <div class="carousel-item active justify-contect-center ">
+        <img class="image" src="public/img/living.jpg" class="d-block W-100 justify-contect-center" alt="smart">
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item justify-contect-center">
         <img src="./public/img/notebook.jpg" class="d-block w-100" alt="notebook">
       </div>
-      <div class="carousel-item">
+      <div class="carousel-item justify-contect-center ">
         <img src="./public/img/celular.jpg" class="d-block w-100" alt="celular">
       </div>
     </div>
@@ -63,8 +63,10 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+      <div id="tipos" class="text-center">
+
+      </div>
       <div>
-        <h1 class="linea animate__animated  animate__fadeInUp 2s">SMARTS-NOTEBOOKS-CELULARES</h1>
         <div id="listaDeProductos" class="d-flex justify-content-around flex-wrap">
         </div>
       </div>

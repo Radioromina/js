@@ -2,7 +2,8 @@
     {
         "cantidad":1,
         "img":"public/img/samsung50.jpg",
-        "marca":"Smart tv Samsung",
+        "tipo":"SMART",
+        "marca":"TV Samsung",
         "stock": 15,
         "precio":89000,
         "modelo": "UN50",
@@ -12,7 +13,8 @@
     {
         "cantidad":1,
         "img":"public/img/samsung43.jpg",
-        "marca":"Smart tv Samsung",
+        "tipo": "SMART",
+        "marca":"TV Samsung",
         "stock": 12,
         "precio":45000,
         "modelo": "UN32",
@@ -22,7 +24,8 @@
     {
         "cantidad":1,
         "img":"public/img/philips50.jpg",
-        "marca":"Smart tv Philips",
+        "tipo": "SMART",
+        "marca":"TV Philips",
         "stock": 8,
         "precio":75000,
         "modelo": "50PU",
@@ -31,7 +34,8 @@
     {
         "cantidad":1,
         "img":"public/img/philips43.jpg",
-        "marca":"Smart tv Philips",
+        "tipo": "SMART",
+        "marca":"TV Philips",
         "stock": 13,
         "precio":55000,
         "modelo": "43PF",
@@ -40,7 +44,8 @@
     {
         "cantidad":1,
         "img":"public/img/LG50.jpg",
-        "marca":"Smart tv LG",
+        "tipo": "Smart",
+        "marca":"TV LG",
         "stock": 10,
         "precio":60000,
         "modelo": "43LM",
@@ -49,7 +54,8 @@
     {
         "cantidad":1,
         "img":"public/img/LG43.jpg",
-        "marca":"Smart tv LG",
+        "tipo": "SMART",
+        "marca":"TV LG",
         "stock": 15,
         "precio":120000,
         "modelo": "50UN",
@@ -58,6 +64,7 @@
     {
         "cantidad":1,
         "img":"public/img/noblex50.jpg",
+        "tipo": "SMART",
         "marca":"TV Noblex",
         "stock": 20,
         "precio":719999,
@@ -67,6 +74,7 @@
     {
         "cantidad":1,
         "img":"public/img/noblex43.jpg",
+        "tipo": "SMART",
         "marca":"TV Noblex",
         "stock": 17,
         "precio":44999,
@@ -76,6 +84,7 @@
     {
         "cantidad":1,
         "img":"public/img/notebook-noblex.webp",
+        "tipo":"NOTEBOOK",
         "marca":"Noblex",
         "stock": 5,
         "precio":56999,
@@ -85,6 +94,7 @@
     {
         "cantidad":1,
         "img":"public/img/notebook-exo.jpg",
+        "tipo":"NOTEBOOK",
         "marca":"Exo",
         "stock": 3,
         "precio":"75999",
@@ -94,6 +104,7 @@
     {
         "cantidad":1,
         "img":"public/img/NOTEBOOK-LENOVO.webp",
+        "tipo":"NOTEBOOK",
         "marca":"Lenovo",
         "stock": 4,
         "precio":"61999",
@@ -103,6 +114,7 @@
     {
         "cantidad":1,
         "img":"public/img/NOTEBOOK-LENOVO.webp",
+        "tipo":"NOTEBOOK",
         "marca":"Lenovo",
         "stock": 2,
         "precio":"83999",
@@ -112,6 +124,7 @@
     {
         "cantidad":1,
         "img":"public/img/notebook-acer.webp",
+        "tipo":"NOTEBOOK",
         "marca":"acer",
         "stock": 2,
         "precio":"94999",
@@ -121,6 +134,7 @@
     {
         "cantidad":1,
         "img":"public/img/notebook-lenovo-think.webp",
+        "tipo":"NOTEBOOK",
         "marca":"Lenovo",
         "stock": 2,
         "precio":"167325",
@@ -130,6 +144,7 @@
     {
         "cantidad":1,
         "img":"public/img/notebook-acer.webp",
+        "tipo":"NOTEBOOK",
         "marca":"acer",
         "stock": 2,
         "precio":"94999",
@@ -139,6 +154,7 @@
     {
         "cantidad":1,
         "img":"public/img/notebook-lenovo-think.webp",
+        "tipo":"NOTEBOOK",
         "marca":"Lenovo",
         "stock": 2,
         "precio":"167325",
@@ -148,6 +164,7 @@
     {
         "cantidad":1,
         "img":"public/img/xiaomi--pocophone-pro.jpg",
+        "tipo":"CELULAR",
         "marca":"Xiaomi",
         "stock": 5,
         "precio":"100970",
@@ -157,6 +174,7 @@
     {
         "cantidad":1,
         "img":"public/img/samsung-galaxys21.jpg",
+        "tipo":"CELULAR",
         "marca":"Samsung Galaxy",
         "stock": 12,
         "precio":"104999",
@@ -166,6 +184,7 @@
     {
         "cantidad":1,
         "img":"public/img/samsung-galaxyA23.jpg",
+        "tipo":"CELULAR",
         "marca":"Samsung Galaxy",
         "stock": 9,
         "precio":"48999",
@@ -175,6 +194,7 @@
     {
         "cantidad":1,
         "img":"public/img/motorola-EDGE20LITE.jpg",
+        "tipo":"CELULAR",
         "marca":"Motorola",
         "stock":13,
         "precio":"54999",
@@ -184,6 +204,7 @@
     {
         "cantidad":1,
         "img":"public/img/xiaomi-redmi-note10.jpg",
+        "tipo":"CELULAR",
         "marca":"xiaomi",
         "stock":3,
         "precio":"108159",
@@ -193,6 +214,7 @@
     {
         "cantidad":1,
         "img":"public/img/LG-K50.jpg",
+        "tipo":"CELULAR",
         "marca":"LG",
         "stock":7,
         "precio":"48999",
@@ -202,6 +224,7 @@
     {
         "cantidad":1,
         "img":"public/img/LG-VELVET.jpg",
+        "tipo":"CELULAR",
         "marca":"LG",
         "stock":8,
         "precio":"199899",
@@ -211,6 +234,7 @@
     {
         "cantidad":1,
         "img":"public/img/LGK51S.jpg",
+        "tipo":"CELULAR",
         "marca":"LG",
         "stock":4,
         "precio":"48351",

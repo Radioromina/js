@@ -6,6 +6,8 @@ const cargarForm = document.querySelector("#cargarForm")
 const mostrarCompra = document.querySelector("#mostrarCompra")
 const total= document.querySelector("#total")
 
+
+
 function guardarDatosUser(){
     let datosUsuarios = {nombre: inputNombre.value,
                         apellido: inputApellido.value,
@@ -26,7 +28,7 @@ cargarForm.addEventListener("click", (e)=>{
         icon: 'error',
         title: '¡Completa tus datos!',
         confirmButtonText: 'Aceptar'
-    }) : (guardarDatosUser(), guardarCompra(), swal.fire({
+    }) : (guardarDatosUser(),  swal.fire({
         icon: 'success',
         title: '¡Enviado!',
         confirmButtonText: 'Aceptar'
@@ -35,10 +37,9 @@ cargarForm.addEventListener("click", (e)=>{
     
 })
 
-
 mostrarCompra.addEventListener("click", (e)=>{
     e.preventDefault()
-    carrito.length === 0 ? 
+    carrito === "[]" ? 
     swal.fire({
         title: '¡Tu carrito se encuentra vacío!',
         icon: 'error',
@@ -47,18 +48,20 @@ mostrarCompra.addEventListener("click", (e)=>{
 })
 
 function recuperarCompra(){
-    
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || []
+
+    let carro = JSON.parse(localStorage.getItem("carrito")) || []
+    console.log(carro)
     let item =""
+    carro.forEach(el => {
+        item += `
+        <h4>${el.marca}, Modelo:${el.modelo} $${el.importeFinal}</h4>
+        <h4>Cantidad:${el.cantidad}</h4>`
     
-    for (el of carrito){
-        item += `<h4>${el.marca}, Modelo:${el.modelo} $${el.importeFinal}</h4>
-        <h4>Cantidad:${el.cantidad}</h4>`  
-    }
-    miCarrito.innerHTML = item 
+    });
     
-    let precioTotal = carrito.reduce((acc, el) => acc + el.importeFinal * el.cantidad, 0)
-    let div =document.createElement("div")
+    miCarrito.innerHTML += item
+    let precioTotal = carro.reduce((acc, el) => acc + el.importeFinal * el.cantidad, 0)
+    let div = document.createElement("div")
     div.innerHTML=`<h4>Precio Total: $${precioTotal}</h4>`
     total.appendChild(div)
 }

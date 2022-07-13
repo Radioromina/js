@@ -9,21 +9,19 @@ const guardarProductos = document.getElementById("guardarProductos")
 const productos = []
 
 
-
-
 function mostrarProductos(array){
-    
+    document.getElementById('listaDeProductos').innerHTML = "";   
     array.forEach(el=>{
-        const {img, marca, pulgadas, importeFinal, id} = el
+        const {img, tipo, marca, pulgadas, importeFinal, id} = el
         let div = document.createElement("div")
         div.className = "w-25 d-flex flex-wrap"
         div.innerHTML = `
         <div class="card border-1 border-warning text-center">
         <img src="${img}" class="card-img-top"></img>
         <div class="card-body">
-        <h5> ${marca}, ${pulgadas}</h5>
+        <h5> ${tipo},${marca}, ${pulgadas}</h5>
         <p class="h6">Precio:$${importeFinal}</p>
-        <button type="button" id="boton${id}" class=" btn btn-warning">Agregar al Carrito</button>
+        <button type="button" id="boton${id}" class=" btn btn-warning border-black">Agregar al Carrito</button>
         </div>
         </div>
         `
@@ -34,6 +32,78 @@ function mostrarProductos(array){
         })
         
     })
+    const tiposElectro=['SMART','NOTEBOOK','CELULAR', 'TODOS']
+
+    tiposElectro.forEach(tipo => {
+
+        const btnProdu = document.createElement('button');
+        btnProdu.innerHTML = tipo;
+        btnProdu.classList.add('btn','btn-warning','m-4','fst-italic');
+
+        btnProdu.addEventListener('click', ()=>{
+
+            if(tipo=== 'TODOS'){
+                document.getElementById('listaDeProductos').innerHTML = "";
+
+                productos.forEach(el =>{
+                    
+                    let div = document.createElement("div")
+                        div.className = "w-25 d-flex flex-wrap"
+                        div.innerHTML = `
+                        <div class="card border-1 border-warning text-center">
+                            <img src="${el.img}" class="card-img-top"></img>
+                        <div class="card-body">
+                            
+                            <h5> ${el.tipo},${el.marca}, ${el.pulgadas}</h5>
+                            <p class="h6">Precio:$${el.importeFinal}</p>
+                            <button type="button" id="boton${el.id}" class=" btn btn-warning border border-black">Agregar al Carrito</button>
+                        </div>
+                        </div>
+                        `
+                        listaDeProductos.appendChild(div)
+                        const btn = document.getElementById(`boton${el.id}`)
+                        btn.addEventListener("click", ()=>{
+                        agregarAlCarrito(el.id)
+                        })
+
+                })
+
+
+            }else{
+
+                const productosFiltrados = productos.filter( pro => pro.tipo === tipo);
+                console.log(productosFiltrados);
+    
+                document.querySelector('#listaDeProductos').innerHTML = "";
+
+                productosFiltrados.forEach(el =>{
+                    let div = document.createElement("div")
+                        div.className = "w-25 d-flex flex-wrap"
+                        div.innerHTML = `
+                        <div class="card border-1 border-warning text-center">
+                            <img src="${el.img}" class="card-img-top"></img>
+                        <div class="card-body">
+                            
+                            <h5> ${el.tipo},${el.marca}, ${el.pulgadas}</h5>
+                            <p class="h6">Precio:$${el.importeFinal}</p>
+                            <button type="button" id="boton${el.id}" class=" btn btn-warning">Agregar al Carrito</button>
+                        </div>
+                        </div>
+                        `
+                        listaDeProductos.appendChild(div)
+                        const btn = document.getElementById(`boton${el.id}`)
+                        btn.addEventListener("click", ()=>{
+                        agregarAlCarrito(el.id)
+                        })
+
+                })
+            }
+
+        })
+
+        document.querySelector('#tipos').appendChild(btnProdu);
+    })
+
 }
 
 const agregarAlCarrito = (elId) => {
@@ -62,21 +132,42 @@ const actualizarCarrito =() =>{
         <p>${prod.marca}</p>
         <p>${prod.modelo}</p>
         <p>Importe Final: $${prod.importeFinal}</p>
-        <p>Cantidad: <span id="cantidad">${prod.cantidad}</p>
-        <button onclick = "eliminarDelCarrito(${prod.id})" class=" btn btn-warning">Borrar </button>
+        <button type="button" id="${prod.id}" class="btn btn-warning restarProd">-</button>
+        <span id="cantidad">${prod.cantidad}
+        <button type="button" id="${prod.id}" class="btn btn-warning sumarProd">+</button>
+        
         `
         listCarrito.appendChild(div)
         localStorage.setItem("carrito", JSON.stringify("carrito"))
     })
-    precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.importeFinal * prod.cantidad, 0)
+    precioTotal.innerText = (carrito.reduce((acc, prod) => acc + prod.importeFinal * prod.cantidad, 0)).toFixed(2)
+
+
+
 }
 
-const eliminarDelCarrito = (elId) =>{
-    const item = carrito.find ((prod)=> prod.id === elId)
-    const index = carrito.indexOf(item)
-    carrito.splice(index, 1)
-    actualizarCarrito()
-}
+listCarrito.addEventListener("click", (e)=>{
+
+    const restarProd = e.target.classList.contains("restarProd")
+    const sumarProd= e.target.classList.contains("sumarProd")
+    if (sumarProd || restarProd) {
+        for (let i = 0; i < carrito.length; i++) {
+            if (carrito[i].id == e.target.id) {
+                if (sumarProd) {
+                    carrito[i].cantidad +=1
+                }else if (restarProd) {
+                    carrito[i].cantidad -=1
+                }
+            }
+            if (carrito[i].cantidad <= 0) {
+                carrito.splice (i, 1)
+            }
+        }
+        actualizarCarrito()
+    } 
+})
+
+
 vaciarCarrito.addEventListener("click",()=>{
     carrito.length = 0
     precioTotal.innerText= 0
@@ -86,3 +177,4 @@ guardarProductos.addEventListener ("click",()=>{
     carrito = JSON.stringify(carrito)
     localStorage.setItem("carrito", carrito)
 })
+
