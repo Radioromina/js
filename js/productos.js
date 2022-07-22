@@ -1,12 +1,13 @@
 
 let carrito=[]
+const productos = []
 
 const listCarrito = document.getElementById("listCarrito")
 const listaDeProductos = document.getElementById("listaDeProductos")
 const vaciarCarrito = document.getElementById("vaciar-carrito")
 const precioTotal = document.getElementById("precioTotal")
 const guardarProductos = document.getElementById("guardarProductos")
-const productos = []
+
 
 
 function mostrarProductos(array){
@@ -21,14 +22,19 @@ function mostrarProductos(array){
         <div class="card-body">
         <h5> ${tipo},${marca}, ${pulgadas}</h5>
         <p class="h6">Precio:$${importeFinal}</p>
-        <button type="button" id="boton${id}" class=" btn btn-warning border-black">Agregar al Carrito</button>
+        <button type="button" id="boton${id}" class="liveToastBtn btn btn-warning border-black">Agregar al Carrito</button>
         </div>
         </div>
         `
         listaDeProductos.appendChild(div)
         const btn = document.getElementById(`boton${el.id}`)
         btn.addEventListener("click", ()=>{
+            const toastLiveExample = document.getElementById('liveToast')
+            const toast = new bootstrap.Toast(toastLiveExample)
+            toast.show()
+        
             agregarAlCarrito(el.id)
+            carroJson()
         })
         
     })
@@ -64,6 +70,7 @@ function mostrarProductos(array){
                         const btn = document.getElementById(`boton${el.id}`)
                         btn.addEventListener("click", ()=>{
                         agregarAlCarrito(el.id)
+                        carroJson()
                         })
 
                 })
@@ -94,6 +101,7 @@ function mostrarProductos(array){
                         const btn = document.getElementById(`boton${el.id}`)
                         btn.addEventListener("click", ()=>{
                         agregarAlCarrito(el.id)
+                        carroJson()
                         })
 
                 })
@@ -104,6 +112,14 @@ function mostrarProductos(array){
         document.querySelector('#tipos').appendChild(btnProdu);
     })
 
+}
+
+function carroJson () {
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
+
+function removeJson (){
+    localStorage.removeItem("carrito")
 }
 
 const agregarAlCarrito = (elId) => {
@@ -138,7 +154,6 @@ const actualizarCarrito =() =>{
         
         `
         listCarrito.appendChild(div)
-        localStorage.setItem("carrito", JSON.stringify("carrito"))
     })
     precioTotal.innerText = (carrito.reduce((acc, prod) => acc + prod.importeFinal * prod.cantidad, 0)).toFixed(2)
 
@@ -158,9 +173,11 @@ listCarrito.addEventListener("click", (e)=>{
                 }else if (restarProd) {
                     carrito[i].cantidad -=1
                 }
+                carroJson()
             }
             if (carrito[i].cantidad <= 0) {
                 carrito.splice (i, 1)
+                removeJson()
             }
         }
         actualizarCarrito()
@@ -171,10 +188,20 @@ listCarrito.addEventListener("click", (e)=>{
 vaciarCarrito.addEventListener("click",()=>{
     carrito.length = 0
     precioTotal.innerText= 0
+    removeJson()
     actualizarCarrito()
 })
-guardarProductos.addEventListener ("click",()=>{
-    carrito = JSON.stringify(carrito)
-    localStorage.setItem("carrito", carrito)
-})
 
+function recuperarCarrito (){
+    if (localStorage.length > 0){
+        recupero = JSON.parse(localStorage.getItem("carrito"))
+        recupero.forEach(el => {
+            carrito.push(new Producto(el.cantidad, el.img, el.tipo, el.marca, el.stock, el.precio, el.modelo, el.pulgadas))
+           
+            actualizarCarrito()
+        })
+        
+    }
+}
+
+recuperarCarrito()

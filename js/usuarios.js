@@ -18,10 +18,7 @@ function guardarDatosUser(){
     localStorage.setItem("datosUsuarios", datoU)
 }
 
-function guardarCompra() {
-    carrito = JSON.stringify(carrito)
-    localStorage.setItem("carrito", carrito)
-}
+
 cargarForm.addEventListener("click", (e)=>{
     e.preventDefault()
     inputNombre.value, inputApellido.value, inputEmail.value, inputTele.value === "" ? swal.fire({
@@ -32,14 +29,23 @@ cargarForm.addEventListener("click", (e)=>{
         icon: 'success',
         title: '¡Enviado!',
         confirmButtonText: 'Aceptar'
-      })) 
+      }), removerStorage(), setTimeout(()=>{
+        window.scroll(top)
+      }, 500)
+       ,setTimeout(()=>{
+          location.reload()
+      }, 800)) 
     
     
 })
 
+function removerStorage () {
+    localStorage.clear()
+}
+
 mostrarCompra.addEventListener("click", (e)=>{
     e.preventDefault()
-    carrito === "[]" ? 
+    carrito.length === 0 ? 
     swal.fire({
         title: '¡Tu carrito se encuentra vacío!',
         icon: 'error',
@@ -50,7 +56,7 @@ mostrarCompra.addEventListener("click", (e)=>{
 function recuperarCompra(){
 
     let carro = JSON.parse(localStorage.getItem("carrito")) || []
-    console.log(carro)
+    
     let item =""
     carro.forEach(el => {
         item += `
@@ -58,10 +64,12 @@ function recuperarCompra(){
         <h4>Cantidad:${el.cantidad}</h4>`
     
     });
-    
+    miCarrito.innerHTML = ""
     miCarrito.innerHTML += item
     let precioTotal = carro.reduce((acc, el) => acc + el.importeFinal * el.cantidad, 0)
     let div = document.createElement("div")
     div.innerHTML=`<h4>Precio Total: $${precioTotal}</h4>`
+    total.innerHTML = ""
     total.appendChild(div)
-}
+
+} 

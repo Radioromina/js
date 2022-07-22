@@ -34,11 +34,11 @@ function obtengoProductos(){
             
         });
         mostrarProductos(productos)
+        
     })
     .catch(err => console.log(err));
 }
 obtengoProductos()
-
 
 
 
